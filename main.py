@@ -1,6 +1,7 @@
 import time
 import numpy as np
 import sys
+
 print("1.Charizard")
 print("2.Blastoise")
 print("3.Venusaur")
@@ -15,7 +16,6 @@ pokemon_1 = int(input("what is your pokemon: "))
 pokemon_2 = int(input("what is the second pokemon: "))
 
 # Delay printing
-
 def delay_print(s):
     # print one character at a time
     # https://stackoverflow.com/questions/9246076/how-to-print-one-character-at-a-time-on-one-line
@@ -35,7 +35,6 @@ class Pokemon:
         self.defense = EVs['DEFENSE']
         self.health = health
         self.bars = 20 # Amount of health bars
-
 
     def fight(self, Pokemon2):
         # Allow two pokemon to fight each other
@@ -82,7 +81,6 @@ class Pokemon:
                     Pokemon2.defense /= 2
                     string_1_attack = '\nIts super effective!'
                     string_2_attack = '\nIts not very effective...'
-
 
         # Now for the actual fighting...
         # Continue while pokemon still have health
@@ -148,11 +146,6 @@ class Pokemon:
         money = np.random.choice(5000)
         delay_print(f"\nOpponent paid you ${money}.\n")
 
-
-
-
-
-
 if __name__ == '__main__':
     #Create Pokemon
     Charizard = Pokemon('Charizard', 'Fire', ['Flamethrower', 'Fly', 'Blast Burn', 'Fire Punch'], {'ATTACK':12, 'DEFENSE': 8})
@@ -166,7 +159,6 @@ if __name__ == '__main__':
     Charmeleon = Pokemon('Charmeleon', 'Fire', ['Ember', 'Scratch', 'Flamethrower', 'Fire Punch'],{'ATTACK':6, 'DEFENSE':5})
     Wartortle = Pokemon('Wartortle', 'Water', ['Bubblebeam', 'Water Gun', 'Headbutt', 'Surf'],{'ATTACK': 5, 'DEFENSE':5})
     Ivysaur = Pokemon('Ivysaur\t', 'Grass', ['Vine Wip', 'Razor Leaf', 'Bullet Seed', 'Leech Seed'],{'ATTACK':4, 'DEFENSE':6})
-
 
     if pokemon_1 == 1 and pokemon_2 == 1:
         Charizard.fight(Charizard)
